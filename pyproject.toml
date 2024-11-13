@@ -13,5 +13,8 @@ dependencies = [
     "pydantic>=2.9.2",
 ]
 
+[project.scripts]
+main = "ontology.main:main"
+
 [tool.uv]
 cache-dir = "D:/.uv/cache"

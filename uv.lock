@@ -124,7 +124,7 @@ dependencies = [
 requires-dist = [
     { name = "networkx", specifier = ">=3.3" },
     { name = "openai", specifier = ">=1.51.0" },
-    { name = "pydantic" },
+    { name = "pydantic", specifier = ">=2.9.2" },
     { name = "pyvis", specifier = ">=0.3.2" },
     { name = "tiktoken", specifier = ">=0.7.0" },
 ]

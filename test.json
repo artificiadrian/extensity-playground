@@ -1,0 +1,102 @@
+{
+    "$defs": {
+        "IdVariant": {
+            "additionalProperties": false,
+            "properties": {
+                "format": {
+                    "description": "A list of property names of the node used for this id variant",
+                    "items": {
+                        "type": "string"
+                    },
+                    "title": "Format",
+                    "type": "array"
+                },
+                "examples": {
+                    "description": "A list of example ids for this id variant",
+                    "items": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "title": "Examples",
+                    "type": "array"
+                }
+            },
+            "required": [
+                "format",
+                "examples"
+            ],
+            "title": "IdVariant",
+            "type": "object"
+        },
+        "Property": {
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "string"
+                },
+                "description": {
+                    "title": "Description",
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "str",
+                        "int",
+                        "float",
+                        "bool"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                },
+                "is_list": {
+                    "default": false,
+                    "title": "Is List",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "name",
+                "description",
+                "type"
+            ],
+            "title": "Property",
+            "type": "object"
+        }
+    },
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "title": "Name",
+            "type": "string"
+        },
+        "description": {
+            "title": "Description",
+            "type": "string"
+        },
+        "id": {
+            "items": {
+                "$ref": "#/$defs/IdVariant"
+            },
+            "title": "Id",
+            "type": "array"
+        },
+        "properties": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/Property"
+            },
+            "title": "Properties"
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "id",
+        "properties"
+    ],
+    "title": "NodeType",
+    "type": "object"
+}
